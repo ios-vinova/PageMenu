@@ -860,7 +860,8 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
         newVC.willMoveToParentViewController(self)
         
         newVC.view.frame = CGRectMake(self.view.frame.width * CGFloat(index), menuHeight, self.view.frame.width, self.view.frame.height - menuHeight)
-        
+        newVC.view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight] // add this line
+
         self.addChildViewController(newVC)
         self.controllerScrollView.addSubview(newVC.view)
         newVC.didMoveToParentViewController(self)
